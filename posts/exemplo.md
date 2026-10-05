@@ -1,5 +1,5 @@
 ---
-title: Como escrever um post neste blog
+title: Template para os posts
 date: 2026-10-04
 tags: [matematica, opiniao]
 ---
@@ -36,8 +36,7 @@ def softmax(x):
     return e / e.sum()
 ```
 
-O restante é Markdown normal: **negrito**, *itálico*, [links](https://www.akitaonrails.com/) e listas.
+O restante é Markdown normal: **negrito**, *itálico*, [links](https://youtube.com/) e listas.
 
 - Um post novo = um `.md` em `/posts/` + o slug em `posts.json`.
 - Tags no frontmatter, sem `#`. Na timeline elas aparecem como `#matematica`.
-- Não abra o site como `file://`. O `fetch` dos `.md` só funciona via HTTP (GitHub Pages ou um servidor local).
