@@ -19,8 +19,8 @@
   "use strict";
 
   var THEME_KEY = "theme";
-  var POSTS_INDEX = "posts.json";
-  var POSTS_DIR = "posts/";
+  var POSTS_INDEX = "./posts.json";
+  var POSTS_DIR = "./posts/";
 
   /* ------------------------------------------------------------------ */
   /* Tema                                                                */
@@ -146,19 +146,23 @@
   /* Carregamento dos posts                                              */
   /* ------------------------------------------------------------------ */
 
+  function throwIfNotOk(response, url) {
+    if (response.ok) return;
+    console.error(response.status, response.statusText);
+    throw new Error(
+      "Falha ao carregar " + url + " (" + response.status + " " + response.statusText + ")"
+    );
+  }
+
   async function fetchText(url) {
     var response = await fetch(url);
-    if (!response.ok) {
-      throw new Error("Falha ao carregar " + url + " (" + response.status + ")");
-    }
+    throwIfNotOk(response, url);
     return response.text();
   }
 
   async function fetchJson(url) {
     var response = await fetch(url);
-    if (!response.ok) {
-      throw new Error("Falha ao carregar " + url + " (" + response.status + ")");
-    }
+    throwIfNotOk(response, url);
     return response.json();
   }
 
