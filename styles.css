@@ -178,12 +178,11 @@ h3 {
 .theme-toggle {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   cursor: pointer;
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 0.2rem 0.55rem;
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
+  padding: 0.28rem;
   color: var(--muted);
   user-select: none;
 }
@@ -193,13 +192,24 @@ h3 {
   color: var(--accent);
 }
 
-.theme-toggle-text::before {
-  content: attr(data-light);
+.icon {
+  display: block;
+  width: 1.15rem;
+  height: 1.15rem;
 }
 
-html:has(#theme-toggle:checked) .theme-toggle-text::before,
-html[data-theme="dark"] .theme-toggle-text::before {
-  content: attr(data-dark);
+.theme-toggle .icon-sun {
+  display: none;
+}
+
+html:has(#theme-toggle:checked) .theme-toggle .icon-moon,
+html[data-theme="dark"] .theme-toggle .icon-moon {
+  display: none;
+}
+
+html:has(#theme-toggle:checked) .theme-toggle .icon-sun,
+html[data-theme="dark"] .theme-toggle .icon-sun {
+  display: block;
 }
 
 .intro {
@@ -220,14 +230,18 @@ html[data-theme="dark"] .theme-toggle-text::before {
 .social {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem 1.1rem;
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
+  align-items: center;
+  gap: 0.35rem;
 }
 
 .social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.28rem;
   color: var(--muted);
   text-decoration: none;
+  border-radius: var(--radius);
 }
 
 .social a:hover {
