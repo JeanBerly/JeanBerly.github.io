@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Notas, rants e artigos sobre matemática aplicada e computação."
+    />
+    <title>Jean — notas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+      (function () {
+        try {
+          var theme = localStorage.getItem("theme");
+          if (theme === "dark") {
+            document.documentElement.setAttribute("data-theme", "dark");
+          }
+        } catch (err) {}
+      })();
+    </script>
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <input
+      type="checkbox"
+      id="theme-toggle"
+      class="theme-toggle-input"
+      aria-hidden="true"
+    />
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html">
+          <span class="brand-name">Jean</span>
+          <span class="brand-mark">/log</span>
+        </a>
+        <label class="theme-toggle" for="theme-toggle" aria-label="Alternar tema claro e escuro">
+          <span class="theme-toggle-text" data-light="escuro" data-dark="claro"></span>
+        </label>
+      </div>
+    </header>
+
+    <main id="conteudo" class="container">
+      <section class="intro" aria-labelledby="intro-heading">
+        <h1 id="intro-heading" class="intro-title">
+          Matemática aplicada e computação, sem o teatro.
+        </h1>
+        <p>
+          Escrevo rants, artigos e opiniões para explicar ideias que costumam
+          ficar presas em papers e jargão. O objetivo é simples: fazer a
+          sociedade entender o que esses conceitos fazem no mundo real.
+        </p>
+        <nav class="social" aria-label="Links">
+          <a href="#" rel="me">GitHub</a>
+          <a href="#" rel="me">YouTube</a>
+          <a href="mailto:">E-mail</a>
+        </nav>
+      </section>
+
+      <section class="timeline" aria-labelledby="timeline-heading">
+        <div class="timeline-head">
+          <h2 id="timeline-heading" class="section-label">timeline</h2>
+          <p class="filter-hint">
+            <span class="filter-label">filtro</span>
+            <span class="tag-list" role="group" aria-label="Filtrar por tag">
+              <button type="button" class="tag is-active" data-tag="todos">todos</button>
+            </span>
+          </p>
+        </div>
+
+        <ol class="post-log"></ol>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© 2026 Jean. Texto em Markdown; o resto é HTML, CSS e JavaScript.</p>
+      </div>
+    </footer>
+  </body>
+</html>
