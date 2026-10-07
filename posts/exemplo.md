@@ -1,7 +1,7 @@
 ---
 title: Template para os posts
 date: 2026-10-04
-tags: [matematica, opiniao]
+tags: [template]
 ---
 
 Este arquivo é o modelo. Copie-o, troque o nome (o *slug* vira o nome do arquivo, sem `.md`) e acrescente o slug em `posts.json`.
